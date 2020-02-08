@@ -13,7 +13,7 @@ public class Intro implements KeyboardHandler {
 
     private Player players[];
 
-    private Picture background = new Picture(10,10,"resources/introBackground.jpg");
+    private Picture background = new Picture(10,10,"resources/BackgroundIntro.png");
     private Text textStart = new Text(640,310,"Start");
 
     Keyboard keyboard = new Keyboard(this);

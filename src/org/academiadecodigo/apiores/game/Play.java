@@ -27,7 +27,7 @@ public class Play {
 
         Alu.generateMath();
 
-        
+
 
     }
 

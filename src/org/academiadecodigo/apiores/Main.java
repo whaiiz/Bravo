@@ -13,7 +13,7 @@ public class Main {
 
         Intro intro = new Intro();
         intro.init();
-        jojo.showPicture();
+        //jojo.showPicture();
     }
 
 
