@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="simplegraphics">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../39_bootcamp/solutions/module_1/car-crash-x/lib/simplegraphics.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
