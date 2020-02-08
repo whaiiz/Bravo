@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="432f16ce-5480-469e-b448-4cb153a1640e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/org/academiadecodigo/apiores/game/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/academiadecodigo/apiores/game/Play.java" afterDir="false" />
+=======
+    <list default="true" id="bf7d98d5-351f-4558-b9a7-bf0272ddf6d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/org/academiadecodigo/apiores/game/Intro.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/academiadecodigo/apiores/game/Intro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/academiadecodigo/apiores/players/Jojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/academiadecodigo/apiores/players/Jojo.java" afterDir="false" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,6 +20,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/org/academiadecodigo/apiores/game/Play.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -21,6 +28,21 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/org/academiadecodigo/apiores/game/Intro.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/org/academiadecodigo/apiores/players/Jojo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
             </state>
           </provider>
         </entry>
@@ -33,7 +55,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/org/academiadecodigo/apiores/game/Play.java" />
+=======
+        <option value="$PROJECT_DIR$/org/academiadecodigo/apiores/players/Jojo.java" />
+        <option value="$PROJECT_DIR$/org/academiadecodigo/apiores/game/Intro.java" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
       </list>
     </option>
   </component>
@@ -49,8 +76,23 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+<<<<<<< HEAD
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -58,9 +100,12 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+<<<<<<< HEAD
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+=======
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -79,20 +124,37 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="432f16ce-5480-469e-b448-4cb153a1640e" name="Default Changelist" comment="" />
       <created>1581177935512</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581177935512</updated>
       <workItem from="1581177936809" duration="2415000" />
+=======
+      <changelist id="bf7d98d5-351f-4558-b9a7-bf0272ddf6d7" name="Default Changelist" comment="" />
+      <created>1581177892721</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581177892721</updated>
+      <workItem from="1581177893941" duration="1699000" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="2415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="1699000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="977" extended-state="0" />
+    <editor active="true" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -103,8 +165,13 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Version Control" visible="true" weight="0.3299435" />
       <window_info anchor="bottom" id="Terminal" />
+=======
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3299435" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -128,6 +195,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/org/academiadecodigo/apiores/game/Play.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -135,12 +203,26 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/org/academiadecodigo/apiores/players/Jojo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org/academiadecodigo/apiores/game/Intro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="20" />
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+<<<<<<< HEAD
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
@@ -201,6 +283,8 @@
           </splitter-proportions>
         </settings>
       </state>
+=======
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>11</last-edited>
@@ -213,6 +297,7 @@
           </splitter-proportions>
         </settings>
       </state>
+<<<<<<< HEAD
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>simplegraphics</last-edited>
@@ -225,6 +310,8 @@
           </splitter-proportions>
         </settings>
       </state>
+=======
+>>>>>>> 2d5d7f1f23b0f65dfabd097796fdfcbef462788a
     </states>
   </component>
 </project>
