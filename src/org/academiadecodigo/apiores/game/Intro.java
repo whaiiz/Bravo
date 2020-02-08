@@ -1,7 +1,6 @@
 package org.academiadecodigo.apiores.game;
 
 import org.academiadecodigo.apiores.players.*;
-import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -14,12 +13,13 @@ public class Intro implements KeyboardHandler {
     private Player players[];
 
     private Picture background = new Picture(10,10,"resources/BackgroundIntro.png");
-    private Text textStart = new Text(640,310,"Start");
 
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent space = new KeyboardEvent();
 
     private Play playGame = new Play();
+
+    public boolean isFinished = false;
 
     public Intro (){
 
@@ -32,8 +32,8 @@ public class Intro implements KeyboardHandler {
     public void init(){
 
         background.draw();
-        textStart.draw();
         keyListener();
+
 
     }
 
@@ -60,6 +60,12 @@ public class Intro implements KeyboardHandler {
     public void hideElements(){
 
         background.delete();
+
+    }
+
+    public void finish(){
+
+        isFinished = true;
 
     }
 
