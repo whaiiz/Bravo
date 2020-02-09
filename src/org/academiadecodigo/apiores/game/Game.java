@@ -1,4 +1,9 @@
 package org.academiadecodigo.apiores.game;
+
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
+import java.awt.*;
+
 // literally implemented in this moment to init the intro
 public class Game {
 
@@ -13,6 +18,9 @@ public class Game {
         intro = new Intro();
         play = new Play();
         finish = new Finish();
+        Rectangle canvas = new Rectangle(10,10,1280,720);
+        canvas.draw();
+
 
     }
 
