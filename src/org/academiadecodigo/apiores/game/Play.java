@@ -33,7 +33,7 @@ public class Play {
 
     public void walk(){
 
-        while (p1.getFinishLine() == false || p2.getFinishLine()== false) {
+      //  while (p1.getFinishLine() == false || p2.getFinishLine()== false) {
 
             if (currentPlayer == p1){
                 currentPlayer = p2;
@@ -56,10 +56,11 @@ public class Play {
                 //precisamos de um delay!!
 
 
-            }
+           }
+            currentPlayer.move();
+        System.out.println("teste 4");
 
-
-        }
+       // }
 
     }
 

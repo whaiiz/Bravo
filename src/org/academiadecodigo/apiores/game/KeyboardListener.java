@@ -91,12 +91,13 @@ public class KeyboardListener implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch(keyboardEvent.getKey()) {
             case 32:
-                removeEventListeners();
-                return;
+                //removeEventListeners();
+                break;
             case 48:
                 System.out.println("you pressed zero");
                 answer += "0";
                 listen = false;
+                break;
 
             case 49:
                 System.out.println("you pressed one");
@@ -157,6 +158,7 @@ public class KeyboardListener implements KeyboardHandler {
         keyboard.removeEventListener(number_7);
         keyboard.removeEventListener(number_8);
         keyboard.removeEventListener(number_9);
+        keyboard.removeEventListener(space);
 
     }
 
