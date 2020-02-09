@@ -2,31 +2,42 @@ package org.academiadecodigo.apiores.game;
 
 public class Alu {
 
-    private static String[] lastMath = new String[10];
+    private static String[] lastMath = {"","","","","","","","","",""};
 
     private static int mFactor1;
     private static int mFactor2;
-    private static String productText;
+    private static int mFactors[] = {0,0};
+
+
+    private static String correctAnswer;
+
+    private static String productText
+            ;
 
     private static int memoryCounter=0;
 
 
 
 
-    public static String generateMath(){
 
-        mFactor1 = (int) (java.lang.Math.random()*10);
-        mFactor2 = (int) (java.lang.Math.random()*10);
 
-        int product = mFactor1*mFactor2;
+    public static int[] generateMath(){
 
-        productText = ""+product;
+        mFactor1 = (int) (Math.random()*10);
+        mFactor2 = (int) (Math.random()*10);
+
+        correctAnswer = (mFactor1*mFactor2) + "";
+
+        productText = "" + mFactor1 + " x " + mFactor2 + " =" ;
+
+        if (!checkMemory()) {generateMath();}
 
         storeMath();
 
-        if (checkMemory() == false) {generateMath();}
+        mFactors[0] = mFactor1;
+        mFactors[1] = mFactor2;
 
-        return ("" + product);
+        return (mFactors);
 
     }
 
@@ -43,11 +54,15 @@ public class Alu {
     public static boolean checkMemory (){
 
         for (String string : lastMath){
-            if (string == productText){
+            if (string.equals(productText)){
                 return false;
             }
         }
         return true;
 
+    }
+
+    public static String getCorrectAnswer(){
+        return correctAnswer;
     }
 }

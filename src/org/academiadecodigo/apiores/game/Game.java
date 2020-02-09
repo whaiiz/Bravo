@@ -1,5 +1,6 @@
 package org.academiadecodigo.apiores.game;
 
+import org.academiadecodigo.apiores.players.Player;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.awt.*;
@@ -10,6 +11,8 @@ public class Game {
     private Intro intro;
     private Play play; // ?? do we need it?
     private Finish finish;
+
+    private static Player[] players;
 
 
     public Game(){
@@ -29,10 +32,16 @@ public class Game {
         // init game
         intro.init();
 
+        players =intro.getPlayers();
+
+        play.init();
+
 
     }
 
-
+    public static Player[] getPlayers(){
+        return players;
+    }
 
 
 

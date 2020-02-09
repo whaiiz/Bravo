@@ -4,20 +4,20 @@ import org.academiadecodigo.apiores.game.Play;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract  class Player {
-    private int position;
+    private int position = 50;
     private String name;
     private Picture picture;
+    private boolean finishLine =false;
 
     public Player (Picture picture) {
-       // this.position = position;
-        //this.name = name;
+
         this.picture = picture;
 
    }
 
-    public void move(Player player)  {
-        picture.translate(10,0);
-        position += 10;
+    public void move()  {
+        picture.translate(150,0);
+        position += 150;
     }
 
     public void showPicture(){
@@ -31,6 +31,21 @@ public abstract  class Player {
     public void setPicture(Picture picture){
         this.picture = picture;
 
+    }
+
+    public Picture getPicture(){
+        return picture;
+    }
+
+    public void checkFinishLine(){
+        if (position >= 1155){
+            finishLine = true;
+        }
+    }
+
+
+    public boolean getFinishLine(){
+        return finishLine;
 
     }
 }

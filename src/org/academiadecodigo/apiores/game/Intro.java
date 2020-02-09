@@ -10,20 +10,21 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Intro implements KeyboardHandler {
 
-    private Player players[];
+    private Player players[] = new Player [2];
 
     private Picture background = new Picture(10,10,"resources/BackgroundIntro.png");
 
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent space = new KeyboardEvent();
 
-    private Play playGame = new Play();
+    //private Play playGame = new Play();
 
     public boolean isFinished = false;
 
+
+
     public Intro (){
 
-        players = new Player[2];
         players[0] = new Jojo();
         players[1] = new Rita();
 
@@ -31,8 +32,11 @@ public class Intro implements KeyboardHandler {
 
     public void init(){
 
-        background.draw();
         keyListener();
+        while (isFinished == false){
+
+            background.draw();
+        }
 
 
     }
@@ -49,6 +53,7 @@ public class Intro implements KeyboardHandler {
     public void keyPressed(KeyboardEvent var1){
         // when key is pressed
         hideElements();
+        isFinished = true;
         //playGame.init(players);
 
     }
@@ -67,6 +72,10 @@ public class Intro implements KeyboardHandler {
 
         isFinished = true;
 
+    }
+
+    public Player[] getPlayers(){
+        return players;
     }
 
 
