@@ -9,7 +9,7 @@ public class Jojo extends Player {
         public Jojo() {
 
           super(p1);
-
+          p1.grow(-200,-200);
         }
 
 

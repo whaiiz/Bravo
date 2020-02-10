@@ -9,6 +9,7 @@ public abstract  class Player {
     private Picture picture;
     private boolean finishLine =false;
 
+
     public Player (Picture picture) {
 
         this.picture = picture;
@@ -16,7 +17,7 @@ public abstract  class Player {
    }
 
     public void move()  {
-        picture.translate(150,0);
+        picture.translate(100,0);
         position += 150;
     }
 

@@ -10,7 +10,9 @@ public class KeyboardListener implements KeyboardHandler {
 
     private Movable movable;
     private int keyOutput;
-    private String answer = "teste";
+    private String answer = "";
+
+    private boolean isListening = true;
 
     private boolean listen = true;
 
@@ -27,9 +29,13 @@ public class KeyboardListener implements KeyboardHandler {
     private KeyboardEvent number_0;
     private KeyboardEvent space;
 
-    public KeyboardListener(Movable movable){
+    private Play play;
+
+    public KeyboardListener(Play play){
 
         this.movable = movable;
+
+        this.play= play;
 
         keyboard = new Keyboard(this);
 
@@ -91,7 +97,8 @@ public class KeyboardListener implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch(keyboardEvent.getKey()) {
             case 32:
-                //removeEventListeners();
+                System.out.println("space pressed");
+                play.checkQuestion();
                 break;
             case 48:
                 System.out.println("you pressed zero");
@@ -165,4 +172,10 @@ public class KeyboardListener implements KeyboardHandler {
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
     }
+
+    public boolean getIsListening (){
+        return isListening;
+    }
+
 }
+

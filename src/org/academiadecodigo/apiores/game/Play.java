@@ -12,6 +12,10 @@ public class Play {
 
     private Picture gamePicture = new Picture(10,10,"resources/GameBackground.png");
 
+    String answer;
+
+    KeyboardListener keyboardListener;
+
    // private KeyboardListener keyboardListener = new KeyboardListener(gamePicture);
 
     // private boolean winner = false;
@@ -25,40 +29,51 @@ public class Play {
         gamePicture.draw();
         p1.getPicture().draw();
         p2.getPicture().draw();
-        walk();
+
+        logicGame();
+
         return currentPlayer;
 
 
     }
 
-    public void walk(){
+    public void logicGame (){
+        if(p1.getFinishLine() == false || p2.getFinishLine()== false) {
+            readQuestion();
+        }
+        logicGame();
 
-      //  while (p1.getFinishLine() == false || p2.getFinishLine()== false) {
+    }
 
-            if (currentPlayer == p1){
-                currentPlayer = p2;
-                return;
-            }
-            currentPlayer = p1;
+    public void readQuestion() {
 
-            int[] mFactors = Alu.generateMath();
 
-            drawNumbers(mFactors);
+        if (currentPlayer == p1) {
+            currentPlayer = p2;
+            return;
+        }
+        currentPlayer = p1;
 
-            KeyboardListener keyboardListener = new KeyboardListener(gamePicture);
+        int[] mFactors = Alu.generateMath();
 
-            String answer = keyboardListener.getAnswer();
+        drawNumbers(mFactors);
 
-            if (answer == Alu.getCorrectAnswer()) {
+        keyboardListener = new KeyboardListener(this);
+    }
+    public void checkQuestion(){
+
+        answer = keyboardListener.getAnswer();
+        System.out.println("resposta " + answer);
+
+            if (answer.equals(Alu.getCorrectAnswer())) {
                 //correctSymbol.draw();
-                //currentPlayer.move();
 
+                currentPlayer.move();
                 //precisamos de um delay!!
-
-
            }
             //currentPlayer.move();
-        System.out.println("teste 4");
+            //currentPlayer.move();
+            //System.out.println("teste 4");
 
        // }
 
