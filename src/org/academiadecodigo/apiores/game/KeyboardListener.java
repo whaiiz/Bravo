@@ -14,6 +14,8 @@ public class KeyboardListener implements KeyboardHandler {
 
     private boolean isListening = true;
 
+    private boolean answerInput = false;
+
     private boolean listen = true;
 
     Keyboard keyboard ;
@@ -98,6 +100,7 @@ public class KeyboardListener implements KeyboardHandler {
         switch(keyboardEvent.getKey()) {
             case 32:
                 System.out.println("space pressed");
+                answerInput = true;
                 play.checkQuestion();
                 break;
             case 48:
@@ -175,6 +178,14 @@ public class KeyboardListener implements KeyboardHandler {
 
     public boolean getIsListening (){
         return isListening;
+    }
+
+    public boolean isAnswerInput(){
+        return answerInput;
+    }
+
+    public void cleanAnswer(){
+        answer = "";
     }
 
 }

@@ -7,10 +7,11 @@ public class Play {
 
     private Player p1;
     private Player p2;
-
     private Player currentPlayer;
 
     private Picture gamePicture = new Picture(10,10,"resources/GameBackground.png");
+
+    private boolean answerDone = false;
 
     String answer;
 
@@ -34,32 +35,44 @@ public class Play {
 
         return currentPlayer;
 
-
     }
 
     public void logicGame (){
-        if(p1.getFinishLine() == false || p2.getFinishLine()== false) {
+
+        if(!p1.getFinishLine() || !p2.getFinishLine()) {
             readQuestion();
+        }else{
+            System.out.println("Done");
         }
-        logicGame();
 
     }
 
     public void readQuestion() {
 
-
-        if (currentPlayer == p1) {
+        /*if (currentPlayer == p1) {
             currentPlayer = p2;
             return;
         }
+        */
         currentPlayer = p1;
 
         int[] mFactors = Alu.generateMath();
-
+        //System.out.println(mFactors[0]);
         drawNumbers(mFactors);
+        System.out.println("DASS");
 
         keyboardListener = new KeyboardListener(this);
+
+         do{ // only goes to the next step while he doesn't end the answer
+
+         }while(!keyboardListener.isAnswerInput());
+         checkQuestion();
+
+        logicGame();
+
+
     }
+
     public void checkQuestion(){
 
         answer = keyboardListener.getAnswer();
@@ -69,13 +82,16 @@ public class Play {
                 //correctSymbol.draw();
 
                 currentPlayer.move();
+                System.out.println("Acertou");
                 //precisamos de um delay!!
-           }
-            //currentPlayer.move();
-            //currentPlayer.move();
-            //System.out.println("teste 4");
 
-       // }
+           }else{
+                System.out.println("ERROU");
+            }
+
+        keyboardListener.cleanAnswer();
+
+        //logicGame();
 
     }
 
@@ -170,13 +186,6 @@ public class Play {
         equal.draw();
 
     }
-
-
-
-
-
-
-
 
 }
 
