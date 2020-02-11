@@ -7,11 +7,14 @@ public class Play {
 
     private Player p1;
     private Player p2;
-    private Player currentPlayer;
+    private Player currentPlayer = p1;
 
     private Picture gamePicture = new Picture(10,10,"resources/GameBackground.png");
 
-    private boolean answerDone = false;
+    private Picture firstPicture;
+    private Picture secondPicture;
+    private Picture xSign = new Picture(450, 50, "resources/x.png");
+    private Picture equalSign = new Picture(600, 50, "resources/=.png");
 
     String answer;
 
@@ -26,10 +29,9 @@ public class Play {
 
         p1 = Game.getPlayers()[0];
         p2 = Game.getPlayers()[1];
-
         gamePicture.draw();
-        p1.getPicture().draw();
-        p2.getPicture().draw();
+        p1.showPicture();
+        p2.showPicture();
 
         logicGame();
 
@@ -41,36 +43,31 @@ public class Play {
 
         if(!p1.getFinishLine() || !p2.getFinishLine()) {
             readQuestion();
-        }else{
-            System.out.println("Done");
         }
-
     }
 
     public void readQuestion() {
 
-        /*if (currentPlayer == p1) {
+        if (currentPlayer == p1) {
             currentPlayer = p2;
-            return;
+            p2.drawArrow();
+            p1.deleteArrow();
+
+        }else{
+           currentPlayer = p1;
+           p1.drawArrow();
+           p2.deleteArrow();
+
         }
-        */
-        currentPlayer = p1;
+
+        System.out.println(currentPlayer);
 
         int[] mFactors = Alu.generateMath();
-        //System.out.println(mFactors[0]);
+        System.out.println(mFactors[0] + "x" +mFactors[1]);
         drawNumbers(mFactors);
-        System.out.println("DASS");
 
         keyboardListener = new KeyboardListener(this);
-
-         do{ // only goes to the next step while he doesn't end the answer
-
-         }while(!keyboardListener.isAnswerInput());
-         checkQuestion();
-
-        logicGame();
-
-
+        keyboardListener.setAnswerInput();
     }
 
     public void checkQuestion(){
@@ -91,7 +88,9 @@ public class Play {
 
         keyboardListener.cleanAnswer();
 
-        //logicGame();
+        deleteNumbers();
+
+        logicGame();
 
     }
 
@@ -151,40 +150,46 @@ public class Play {
 
         if(arrayNumber0 == 10) {
 
-            Picture ten = selectPicture(arrayNumber0);
-            ten.translate(-40,0);
-            ten.draw();
+            firstPicture = selectPicture(arrayNumber0);
+            firstPicture.translate(-40,0);
+            firstPicture.draw();
         }else {
-            selectPicture(arrayNumber0).draw();
+            firstPicture = selectPicture(arrayNumber0);
+            firstPicture.draw();
         }
-
-
 
     }
 
     private void drawSecondPicture(int arrayNumber1){
-        Picture picture = selectPicture(arrayNumber1);
-        picture.translate(150, 0);
-        picture.draw();
+        secondPicture = selectPicture(arrayNumber1);
+        secondPicture.translate(150, 0);
+        secondPicture.draw();
     }
 
     public void drawNumbers(int counts[]) {
 
         drawFirstPicture(counts[0]);
 
-        Picture multiplication = new Picture(450, 50, "resources/x.png");
-        multiplication.draw();
+        xSign.draw();
 
         drawSecondPicture(counts[1]);
 
-        Picture equal = new Picture(600, 50, "resources/=.png");
+        equalSign.draw();
 
         if (counts[1] == 10) {
-            equal.translate(20, 0);
+            equalSign.translate(20, 0);
         }
 
-        equal.draw();
+        equalSign.draw();
 
+    }
+
+    public void deleteNumbers(){
+
+        firstPicture.delete();
+        secondPicture.delete();
+        xSign.delete();
+        equalSign.delete();
     }
 
 }
