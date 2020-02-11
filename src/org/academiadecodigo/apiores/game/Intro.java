@@ -33,6 +33,7 @@ public class Intro implements KeyboardHandler {
     public void init(){
 
         keyListener();
+        //background.draw();
         while (isFinished == false){
 
             background.draw();

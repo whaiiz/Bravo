@@ -22,7 +22,7 @@ public class Play {
 
    // private KeyboardListener keyboardListener = new KeyboardListener(gamePicture);
 
-    // private boolean winner = false;
+    private boolean winner = false;
 
 
     public Player  init (){
@@ -32,18 +32,20 @@ public class Play {
         gamePicture.draw();
         p1.showPicture();
         p2.showPicture();
-
-        logicGame();
-
-        return currentPlayer;
+        return logicGame();  
 
     }
 
-    public void logicGame (){
+    public Player logicGame (){
 
-        if(!p1.getFinishLine() || !p2.getFinishLine()) {
+        if(!p1.checkFinishLine() && !p2.checkFinishLine()) {
             readQuestion();
         }
+        winner = true;
+
+
+        return currentPlayer;
+
     }
 
     public void readQuestion() {
@@ -60,10 +62,11 @@ public class Play {
 
         }
 
-        System.out.println(currentPlayer);
+        //System.out.println(currentPlayer);
 
         int[] mFactors = Alu.generateMath();
-        System.out.println(mFactors[0] + "x" +mFactors[1]);
+        //System.out.println(mFactors[0] + "x" +mFactors[1]);
+
         drawNumbers(mFactors);
 
         keyboardListener = new KeyboardListener(this);
@@ -73,17 +76,18 @@ public class Play {
     public void checkQuestion(){
 
         answer = keyboardListener.getAnswer();
-        System.out.println("resposta " + answer);
+
+        //System.out.println("resposta " + answer);
 
             if (answer.equals(Alu.getCorrectAnswer())) {
                 //correctSymbol.draw();
 
                 currentPlayer.move();
-                System.out.println("Acertou");
+               // System.out.println("Acertou");
                 //precisamos de um delay!!
 
            }else{
-                System.out.println("ERROU");
+                //System.out.println("ERROU");
             }
 
         keyboardListener.cleanAnswer();

@@ -3,7 +3,7 @@ package org.academiadecodigo.apiores.players;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract  class Player {
-    private int position = 50;
+    private int position = 0;
     private Picture picture;
     private Picture arrowPosition;
 
@@ -22,7 +22,7 @@ public abstract  class Player {
     public void move()  {
         picture.translate(100,0);
         arrowPosition.translate(100,0);
-        position += 150;
+        position += 100;
     }
 
     public void showPicture(){
@@ -42,17 +42,14 @@ public abstract  class Player {
     }
 
 
-    public void checkFinishLine(){
-        if (position >= 1155){
-            finishLine = true;
+    public boolean checkFinishLine(){
+        if (position >= 350){ //850 CORRECTO
+            return true;
         }
+        return false;
     }
 
 
-    public boolean getFinishLine(){
-        return finishLine;
-
-    }
 
     public void setCurrentPlayer(){
 

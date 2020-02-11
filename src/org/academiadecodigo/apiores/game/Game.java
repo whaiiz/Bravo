@@ -36,6 +36,12 @@ public class Game {
 
         play.init();
 
+        //finish.getImageFinal().draw();
+
+        System.out.println("metodo finish");
+
+
+
 
     }
 
