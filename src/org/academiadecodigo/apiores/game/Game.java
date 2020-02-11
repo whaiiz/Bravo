@@ -20,7 +20,6 @@ public class Game {
         // assign a new intro, play
         intro = new Intro();
         play = new Play();
-        finish = new Finish();
         Rectangle canvas = new Rectangle(10,10,1280,720);
         canvas.draw();
 

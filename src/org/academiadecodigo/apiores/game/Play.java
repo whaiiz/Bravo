@@ -25,27 +25,26 @@ public class Play {
     private boolean winner = false;
 
 
-    public Player  init (){
+    public void init (){
 
         p1 = Game.getPlayers()[0];
         p2 = Game.getPlayers()[1];
         gamePicture.draw();
         p1.showPicture();
         p2.showPicture();
-        return logicGame();  
+        logicGame();
 
     }
 
-    public Player logicGame (){
+    public void logicGame (){
 
         if(!p1.checkFinishLine() && !p2.checkFinishLine()) {
             readQuestion();
+        }else {
+            winner = true;
+            Finish f1 = new Finish();
+            f1.init();
         }
-        winner = true;
-
-
-        return currentPlayer;
-
     }
 
     public void readQuestion() {

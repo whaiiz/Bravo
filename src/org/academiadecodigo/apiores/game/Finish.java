@@ -7,6 +7,7 @@ public class Finish {
     private Picture imageFinal = new Picture (10,10, "resources/maxresdefault.jpg");
 
     public void init(){
+        imageFinal.draw();
         System.out.println("The end");
     }
 
