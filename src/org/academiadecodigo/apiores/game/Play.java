@@ -15,6 +15,7 @@ public class Play {
     private Picture secondPicture;
     private Picture xSign = new Picture(450, 50, "resources/x.png");
     private Picture equalSign = new Picture(600, 50, "resources/=.png");
+    private Picture wrongOrRight = new Picture(900,50, "resources/nothing.png");
 
     String answer;
 
@@ -22,7 +23,7 @@ public class Play {
 
    // private KeyboardListener keyboardListener = new KeyboardListener(gamePicture);
 
-    private boolean winner = false;
+    private Player winner;
 
 
     public void init (){
@@ -41,8 +42,12 @@ public class Play {
         if(!p1.checkFinishLine() && !p2.checkFinishLine()) {
             readQuestion();
         }else {
-            winner = true;
-            Finish f1 = new Finish();
+            if(p1.checkFinishLine()) {
+                winner = p1;
+            }else{
+                winner = p2;
+            }
+            Finish f1 = new Finish(winner);
             f1.init();
         }
     }
@@ -61,10 +66,7 @@ public class Play {
 
         }
 
-        //System.out.println(currentPlayer);
-
         int[] mFactors = Alu.generateMath();
-        //System.out.println(mFactors[0] + "x" +mFactors[1]);
 
         drawNumbers(mFactors);
 
@@ -74,20 +76,20 @@ public class Play {
 
     public void checkQuestion(){
 
+
         answer = keyboardListener.getAnswer();
 
-        //System.out.println("resposta " + answer);
-
-            if (answer.equals(Alu.getCorrectAnswer())) {
-                //correctSymbol.draw();
-
+        if(answer.equals(Alu.getCorrectAnswer())) {
+                wrongOrRight.load("resources/right.png");
+                wrongOrRight.draw();
                 currentPlayer.move();
-               // System.out.println("Acertou");
                 //precisamos de um delay!!
+                System.out.println("Right");
+        }else{
+            System.out.println("Wrong");
+            wrongOrRight.load("resources/wrong.png");
+        }
 
-           }else{
-                //System.out.println("ERROU");
-            }
 
         keyboardListener.cleanAnswer();
 

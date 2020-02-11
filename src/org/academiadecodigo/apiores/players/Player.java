@@ -10,8 +10,6 @@ public abstract  class Player {
     private boolean finishLine =false;
     private boolean currentPlayer = false;
 
-
-
     public Player (Picture picture,Picture arrowPosition) {
 
         this.picture = picture;
@@ -27,6 +25,9 @@ public abstract  class Player {
 
     public void showPicture(){
         picture.draw();
+    }
+    public Picture getPicture(){
+        return picture;
     }
 
     public void celebrate(){
