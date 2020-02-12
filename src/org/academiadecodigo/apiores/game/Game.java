@@ -18,6 +18,7 @@ public class Game {
     public Game(){
 
         // assign a new intro, play
+        System.out.println("IT BEGUN");
         intro = new Intro();
         play = new Play();
         Rectangle canvas = new Rectangle(10,10,1280,720);
