@@ -52,14 +52,16 @@ public class Finish implements KeyboardHandler {
         backgroundImage.delete();
         System.out.println("You pressed R");
 
-       // System.exit(0);
-       // Game g1 = new Game();
+
+        System.exit(0);
+        // Game g1 = new Game();
         //g1.init();
 
 
     }
 
     public void keyReleased(KeyboardEvent var1){
+
 
     }
 
