@@ -33,7 +33,7 @@ public class Intro implements KeyboardHandler {
     public void init(){
 
         keyListener();
-        //background.draw();
+
         while (isFinished == false){
 
             background.draw();
@@ -52,10 +52,11 @@ public class Intro implements KeyboardHandler {
     }
 
     public void keyPressed(KeyboardEvent var1){
+
         // when key is pressed
         hideElements();
+
         isFinished = true;
-        //playGame.init(players);
 
     }
 

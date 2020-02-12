@@ -14,9 +14,9 @@ public class Play {
     private Picture firstPicture;
     private Picture secondPicture;
 
-    private Picture picture0;
-    private Picture picture1;
-    private Picture picture2;
+    private Picture picture0 = new Picture(450, 50, "resources/x.png");
+    private Picture picture1 = new Picture(450, 50, "resources/x.png");
+    private Picture picture2 = new Picture(450, 50, "resources/x.png");
 
     private Picture xSign = new Picture(450, 50, "resources/x.png");
     private Picture equalSign = new Picture(600, 50, "resources/=.png");
@@ -92,11 +92,15 @@ public class Play {
             System.out.println("Wrong");
             wrongOrRight.load("resources/wrong.png");
         }
+
+
         keyboardListener.cleanAnswer();
 
         deleteNumbers();
 
+
         logicGame();
+        //System.out.println("teste do jaime 2");
 
     }
 
@@ -190,39 +194,40 @@ public class Play {
 
     }
 
-​
 
-    public void drawLiveAnswer (int i, int answerCounter){
-        if (answerCounter == 0){
+    public void drawLiveAnswer (int i){
+        if (keyboardListener.getAnswerCounter() == 0){
             picture0 =selectPicture(i);
-            picture0.translate(30,0);
+            picture0.translate(320,0);
             picture0.draw();
-            answerCounter++;
+            keyboardListener.setAnswerCounter(1);
+            return;
         }
-        if (answerCounter ==1){
+        if (keyboardListener.getAnswerCounter()==1){
             picture1 =selectPicture(i);
-            picture1.translate(50,0);
+            picture1.translate(420,0);
             picture1.draw();
-            answerCounter ++;
+            keyboardListener.setAnswerCounter(2);
+            return;
         }
-        if (answerCounter ==2){
+        if (keyboardListener.getAnswerCounter()==2){
             picture2 =selectPicture(i);
-            picture2.translate(60,0);
+            picture2.translate(520,0);
             picture2.draw();
-            answerCounter ++;
+            keyboardListener.setAnswerCounter(3);
+            return;
         }
     }
-​
-    private void clearLiveAnswer (){
+
+    public void clearLiveAnswer (){
 
         picture0.delete();
         picture1.delete();
         picture2.delete();
-        keyboardListener.setAnswerCounter();
+        keyboardListener.setAnswerCounter(0);
 
     }
-​
-        ​
+
     public void deleteNumbers(){
 
         firstPicture.delete();

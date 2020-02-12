@@ -17,10 +17,6 @@ public class Alu {
     private static int memoryCounter=0;
 
 
-
-
-
-
     public static int[] generateMath(){
 
         mFactor1 = (int) (Math.random()*9+1);
@@ -34,8 +30,10 @@ public class Alu {
 
         storeMath();
 
+
         mFactors[0] = mFactor1;
         mFactors[1] = mFactor2;
+
 
         return (mFactors);
 
@@ -47,7 +45,7 @@ public class Alu {
 
 
         lastMath[memoryCounter]= productText;
-
+        System.out.println("teste do Jaime");
         memoryCounter++;
     }
 
@@ -57,6 +55,7 @@ public class Alu {
             if (string.equals(productText)){
                 return false;
             }
+
         }
         return true;
 

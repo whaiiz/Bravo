@@ -9,13 +9,13 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 public class KeyboardListener implements KeyboardHandler {
 
     private Movable movable;
-    private int keyOutput;
+
     private String answer = "";
 
     private boolean isListening = true;
 
     private int answerCounter =0; //only acepts 3 digit answers!
-    private int[] answerArray = {-1,-1,-1};
+
 
     Keyboard keyboard;
     private KeyboardEvent number_1;
@@ -106,7 +106,7 @@ public class KeyboardListener implements KeyboardHandler {
 
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch(keyboardEvent.getKey()) {
-            case 32:
+            case KeyboardEvent.KEY_SPACE:
                 System.out.println("space pressed");
                 play.checkQuestion();
                 removeEventListeners();
@@ -118,53 +118,53 @@ public class KeyboardListener implements KeyboardHandler {
             case 48:
                 System.out.println("you pressed zero");
                 answer += "0";
-                play.drawLiveAnswer(0, answerCounter);
+                play.drawLiveAnswer(0);
                 break;
             case 49:
                 System.out.println("you pressed one");
                 answer += "1";
-                play.drawLiveAnswer(1,answerCounter);
+                play.drawLiveAnswer(1);
                 System.out.println(answer);
                 break;
             case 50:
                 System.out.println("you pressed two");
-                play.drawLiveAnswer(2,answerCounter);
+                play.drawLiveAnswer(2);
                 answer +="2";
                 break;
             case 51:
                 System.out.println("you pressed three");
-                play.drawLiveAnswer(3,answerCounter);
+                play.drawLiveAnswer(3);
                 answer +="3";
                 break;
             case 52:
                 System.out.println("you pressed four");
-                play.drawLiveAnswer(4,answerCounter);
+                play.drawLiveAnswer(4);
                 answer +="4";
                 break;
             case 53:
                 System.out.println("you pressed five");
                 answer +="5";
-                play.drawLiveAnswer(5,answerCounter);
+                play.drawLiveAnswer(5);
                 break;
             case 54:
                 System.out.println("you pressed six");
                 answer +="6";
-                play.drawLiveAnswer(6,answerCounter);
+                play.drawLiveAnswer(6);
                 break;
             case 55:
                 System.out.println("you pressed seven");
                 answer +="7";
-                play.drawLiveAnswer(7,answerCounter);
+                play.drawLiveAnswer(7);
                 break;
             case 56:
                 System.out.println("you pressed eight");
                 answer +="8";
-                play.drawLiveAnswer(8,answerCounter);
+                play.drawLiveAnswer(8);
                 break;
             case 57:
                 System.out.println("you pressed nine");
                 answer +="9";
-                play.drawLiveAnswer(9,answerCounter);
+                play.drawLiveAnswer(9);
                 break;
             default:
                 System.out.println("you pressed  o crl");
@@ -202,14 +202,17 @@ public class KeyboardListener implements KeyboardHandler {
 
     public void cleanAnswer(){
         answer = "";
+        play.clearLiveAnswer();
     }
 
-    public int[] getAnswerArray(){
-        return answerArray;
+
+
+    public void setAnswerCounter(int i){
+        answerCounter=i;
     }
 
-    public void setAnswerCounter(){
-        answerCounter=0;
+    public int getAnswerCounter(){
+        return answerCounter;
     }
 }
 
