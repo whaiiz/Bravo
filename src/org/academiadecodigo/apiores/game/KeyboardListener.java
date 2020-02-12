@@ -14,10 +14,6 @@ public class KeyboardListener implements KeyboardHandler {
 
     private boolean isListening = true;
 
-    private boolean answerInput = false;
-
-    private boolean listen = true;
-
     Keyboard keyboard;
     private KeyboardEvent number_1;
     private KeyboardEvent number_2;
@@ -91,7 +87,7 @@ public class KeyboardListener implements KeyboardHandler {
         number_0.setKey(KeyboardEvent.KEY_0);
         keyboard.addEventListener(number_0);
 
-        KeyboardEvent space = new KeyboardEvent();
+        space = new KeyboardEvent();
         space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         space.setKey(KeyboardEvent.KEY_SPACE);
         keyboard.addEventListener(space);
@@ -100,14 +96,12 @@ public class KeyboardListener implements KeyboardHandler {
         switch(keyboardEvent.getKey()) {
             case 32:
                 System.out.println("space pressed");
-                answerInput = true;
                 play.checkQuestion();
                 removeEventListeners();
                 break;
             case 48:
                 System.out.println("you pressed zero");
                 answer += "0";
-                listen = false;
                 break;
             case 49:
                 System.out.println("you pressed one");
@@ -176,17 +170,6 @@ public class KeyboardListener implements KeyboardHandler {
     public void keyReleased(KeyboardEvent keyboardEvent) {
     }
 
-    public boolean getIsListening (){
-        return isListening;
-    }
-
-    public boolean isAnswerInput(){
-        return answerInput;
-    }
-
-    public void setAnswerInput(){
-        answerInput = false;
-    }
 
     public void cleanAnswer(){
         answer = "";

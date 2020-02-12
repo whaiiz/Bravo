@@ -30,7 +30,7 @@ public class Alu {
 
         productText = "" + mFactor1 + " x " + mFactor2 + " =" ;
 
-        if (!checkMemory()) {generateMath();}
+       if (!checkMemory()) {generateMath();}
 
         storeMath();
 

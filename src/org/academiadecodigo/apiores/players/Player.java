@@ -6,9 +6,11 @@ public abstract  class Player {
     private int position = 0;
     private Picture picture;
     private Picture arrowPosition;
+    private Picture winingImage;
 
     private boolean finishLine =false;
     private boolean currentPlayer = false;
+
 
     public Player (Picture picture,Picture arrowPosition) {
 
@@ -16,6 +18,13 @@ public abstract  class Player {
         this.arrowPosition = arrowPosition;
 
    }
+   public Player (Picture picture,Picture arrowPosition, Picture winningImage) {
+
+        this.picture = picture;
+        this.arrowPosition = arrowPosition;
+        this.winingImage = winningImage;
+
+    }
 
     public void move()  {
         picture.translate(100,0);
@@ -48,6 +57,10 @@ public abstract  class Player {
             return true;
         }
         return false;
+    }
+
+    public Picture getWinningImage(){
+        return winingImage;
     }
 
 

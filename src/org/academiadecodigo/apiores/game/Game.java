@@ -23,7 +23,6 @@ public class Game {
         Rectangle canvas = new Rectangle(10,10,1280,720);
         canvas.draw();
 
-
     }
 
     public void init(){
@@ -31,15 +30,9 @@ public class Game {
         // init game
         intro.init();
 
-        players =intro.getPlayers();
+        players = intro.getPlayers();
 
         play.init();
-
-        //finish.getImageFinal().draw();
-
-        System.out.println("metodo finish");
-
-
 
 
     }

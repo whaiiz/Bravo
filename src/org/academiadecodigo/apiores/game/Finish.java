@@ -15,9 +15,9 @@ public class Finish {
 
     public void init(){
       //  imageFinal = winner.getPicture();
-        imageFinal.draw();
+        //imageFinal.draw();
         winner.getPicture().draw();
-        System.out.println("The end");
+        System.out.println(winner.getWinningImage());
     }
 
 

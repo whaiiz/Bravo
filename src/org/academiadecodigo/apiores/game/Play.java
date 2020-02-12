@@ -17,13 +17,13 @@ public class Play {
     private Picture equalSign = new Picture(600, 50, "resources/=.png");
     private Picture wrongOrRight = new Picture(900,50, "resources/nothing.png");
 
-    String answer;
+    private String answer;
 
-    KeyboardListener keyboardListener;
+    private KeyboardListener keyboardListener;
 
    // private KeyboardListener keyboardListener = new KeyboardListener(gamePicture);
 
-    private Player winner;
+    private static Player winner;
 
 
     public void init (){
@@ -47,8 +47,7 @@ public class Play {
             }else{
                 winner = p2;
             }
-            Finish f1 = new Finish(winner);
-            f1.init();
+            finish();
         }
     }
 
@@ -70,12 +69,10 @@ public class Play {
 
         drawNumbers(mFactors);
 
-        keyboardListener = new KeyboardListener(this);
-        keyboardListener.setAnswerInput();
+        keyboardListener = new KeyboardListener(this); // start reading keyboard input
     }
 
     public void checkQuestion(){
-
 
         answer = keyboardListener.getAnswer();
 
@@ -89,8 +86,6 @@ public class Play {
             System.out.println("Wrong");
             wrongOrRight.load("resources/wrong.png");
         }
-
-
         keyboardListener.cleanAnswer();
 
         deleteNumbers();
@@ -171,7 +166,7 @@ public class Play {
         secondPicture.draw();
     }
 
-    public void drawNumbers(int counts[]) {
+    public void drawNumbers(int[] counts) {
 
         drawFirstPicture(counts[0]);
 
@@ -195,6 +190,25 @@ public class Play {
         secondPicture.delete();
         xSign.delete();
         equalSign.delete();
+    }
+
+    public void finish(){
+
+         gamePicture.delete();
+         firstPicture.delete();
+         secondPicture.delete();
+         xSign.delete();
+         equalSign.delete();
+         wrongOrRight.delete();
+         p1.getPicture().delete();
+         p2.getPicture().delete();
+         currentPlayer.getPicture().delete();
+         currentPlayer.deleteArrow();
+         keyboardListener.removeEventListeners();
+
+        Finish f1 = new Finish(winner);
+        f1.init();
+
     }
 
 }
