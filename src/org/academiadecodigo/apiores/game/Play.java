@@ -20,7 +20,7 @@ public class Play {
 
     private Picture xSign = new Picture(450, 50, "resources/x.png");
     private Picture equalSign = new Picture(600, 50, "resources/=.png");
-    private Picture wrongOrRight = new Picture(900,50, "resources/nothing.png");
+    private Picture wrongOrRight = new Picture(1000,50, "resources/nothing.png");
 
     private String answer;
 
@@ -60,13 +60,17 @@ public class Play {
 
         if (currentPlayer == p1) {
             currentPlayer = p2;
-            p2.drawArrow();
-            p1.deleteArrow();
+            //p2.drawArrow();
+            //p1.deleteArrow();
+            p2.drawHL();
+            p1.deleteHL();
 
         }else{
            currentPlayer = p1;
-           p1.drawArrow();
-           p2.deleteArrow();
+           //p1.drawArrow();
+           //p2.deleteArrow();
+           p1.drawHL();
+           p2.deleteHL();
 
         }
 
@@ -83,14 +87,14 @@ public class Play {
         answer = keyboardListener.getAnswer();
 
         if(answer.equals(Alu.getCorrectAnswer())) {
-                wrongOrRight.load("resources/right.png");
+                wrongOrRight.load("resources/yes.png");
                 wrongOrRight.draw();
                 currentPlayer.move();
                 //precisamos de um delay!!
                 System.out.println("Right");
         }else{
             System.out.println("Wrong");
-            wrongOrRight.load("resources/wrong.png");
+            wrongOrRight.load("resources/no.png");
         }
 
 
@@ -248,11 +252,10 @@ public class Play {
          wrongOrRight.delete();
          p1.getPicture().delete();
          p2.getPicture().delete();
-         currentPlayer.getPicture().delete();
-         currentPlayer.deleteArrow();
          keyboardListener.removeEventListeners();
 
-        Finish f1 = new Finish(winner);
+
+         Finish f1 = new Finish(winner);
 
     }
 

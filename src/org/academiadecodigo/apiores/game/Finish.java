@@ -1,5 +1,6 @@
 package org.academiadecodigo.apiores.game;
 
+import org.academiadecodigo.apiores.players.Jojo;
 import org.academiadecodigo.apiores.players.Player;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -11,7 +12,7 @@ public class Finish implements KeyboardHandler {
 
     private Player winner;
     private Picture imageFinal = new Picture (10,10, "resources/maxresdefault.jpg");
-    private Picture backgroundImage = new Picture (10,10, "resources/maxresdefault.jpg");
+    private Picture backgroundImage = new Picture (10,10, "resources/fim.png");
 
     private Keyboard keyboard = new Keyboard(this);
     private KeyboardEvent letter_R = new KeyboardEvent();
@@ -26,9 +27,13 @@ public class Finish implements KeyboardHandler {
     public void init(){
         //imageFinal = winner.getPicture();
         //imageFinal.draw();
+        if(winner instanceof Jojo){
+            backgroundImage.load("resources/Fimjojo.png");
+        }else{
+            backgroundImage.load("resources/Fimsoraia.png");
+
+        }
         backgroundImage.draw();
-        winner.getPicture().draw();
-        System.out.println(winner.getWinningImage());
         keyListener();
 
     }
@@ -46,9 +51,10 @@ public class Finish implements KeyboardHandler {
 
         backgroundImage.delete();
         System.out.println("You pressed R");
-        System.exit(0);
-        Game g1 = new Game();
-        g1.init();
+
+       // System.exit(0);
+       // Game g1 = new Game();
+        //g1.init();
 
 
     }

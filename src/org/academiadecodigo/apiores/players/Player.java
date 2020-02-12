@@ -39,20 +39,28 @@ public abstract  class Player {
         return picture;
     }
 
+    public void deletePicture(){
+        this.picture.delete();
+    }
+
     public void celebrate(){
 
     }
 
     public void drawArrow(){
-            arrowPosition.draw();
+        arrowPosition.draw();
     }
 
     public void deleteArrow(){
         arrowPosition.delete();
     }
+    public void drawHL(){
+    }
+    public void deleteHL(){
+    }
 
 
-    public boolean checkFinishLine(){
+        public boolean checkFinishLine(){
         if (position >= 350){ //850 CORRECTO
             return true;
         }
