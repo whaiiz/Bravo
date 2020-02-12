@@ -207,7 +207,6 @@ public class Play {
          keyboardListener.removeEventListeners();
 
         Finish f1 = new Finish(winner);
-        f1.init();
 
     }
 

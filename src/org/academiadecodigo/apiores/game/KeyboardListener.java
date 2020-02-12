@@ -26,6 +26,7 @@ public class KeyboardListener implements KeyboardHandler {
     private KeyboardEvent number_9;
     private KeyboardEvent number_0;
     private KeyboardEvent space;
+    private KeyboardEvent kDown;
 
     private Play play;
 
@@ -91,6 +92,11 @@ public class KeyboardListener implements KeyboardHandler {
         space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         space.setKey(KeyboardEvent.KEY_SPACE);
         keyboard.addEventListener(space);
+
+        kDown = new KeyboardEvent();
+        kDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        kDown.setKey(KeyboardEvent.KEY_DOWN);
+        keyboard.addEventListener(kDown);
     }
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch(keyboardEvent.getKey()) {
@@ -98,6 +104,10 @@ public class KeyboardListener implements KeyboardHandler {
                 System.out.println("space pressed");
                 play.checkQuestion();
                 removeEventListeners();
+                break;
+            case 40:
+                System.out.println("Down pressed");
+                cleanAnswer();
                 break;
             case 48:
                 System.out.println("you pressed zero");
