@@ -13,6 +13,11 @@ public class Play {
 
     private Picture firstPicture;
     private Picture secondPicture;
+
+    private Picture picture0;
+    private Picture picture1;
+    private Picture picture2;
+
     private Picture xSign = new Picture(450, 50, "resources/x.png");
     private Picture equalSign = new Picture(600, 50, "resources/=.png");
     private Picture wrongOrRight = new Picture(900,50, "resources/nothing.png");
@@ -70,6 +75,7 @@ public class Play {
         drawNumbers(mFactors);
 
         keyboardListener = new KeyboardListener(this); // start reading keyboard input
+
     }
 
     public void checkQuestion(){
@@ -184,12 +190,47 @@ public class Play {
 
     }
 
+​
+
+    public void drawLiveAnswer (int i, int answerCounter){
+        if (answerCounter == 0){
+            picture0 =selectPicture(i);
+            picture0.translate(30,0);
+            picture0.draw();
+            answerCounter++;
+        }
+        if (answerCounter ==1){
+            picture1 =selectPicture(i);
+            picture1.translate(50,0);
+            picture1.draw();
+            answerCounter ++;
+        }
+        if (answerCounter ==2){
+            picture2 =selectPicture(i);
+            picture2.translate(60,0);
+            picture2.draw();
+            answerCounter ++;
+        }
+    }
+​
+    private void clearLiveAnswer (){
+
+        picture0.delete();
+        picture1.delete();
+        picture2.delete();
+        keyboardListener.setAnswerCounter();
+
+    }
+​
+        ​
     public void deleteNumbers(){
 
         firstPicture.delete();
         secondPicture.delete();
         xSign.delete();
         equalSign.delete();
+
+        clearLiveAnswer(); // apaga a resposta do jogador!
     }
 
     public void finish(){

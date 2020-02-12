@@ -14,6 +14,9 @@ public class KeyboardListener implements KeyboardHandler {
 
     private boolean isListening = true;
 
+    private int answerCounter =0; //only acepts 3 digit answers!
+    private int[] answerArray = {-1,-1,-1};
+
     Keyboard keyboard;
     private KeyboardEvent number_1;
     private KeyboardEvent number_2;
@@ -29,6 +32,8 @@ public class KeyboardListener implements KeyboardHandler {
     private KeyboardEvent kDown;
 
     private Play play;
+
+
 
     public KeyboardListener(Play play){
 
@@ -98,6 +103,7 @@ public class KeyboardListener implements KeyboardHandler {
         kDown.setKey(KeyboardEvent.KEY_DOWN);
         keyboard.addEventListener(kDown);
     }
+
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch(keyboardEvent.getKey()) {
             case 32:
@@ -112,43 +118,53 @@ public class KeyboardListener implements KeyboardHandler {
             case 48:
                 System.out.println("you pressed zero");
                 answer += "0";
+                play.drawLiveAnswer(0, answerCounter);
                 break;
             case 49:
                 System.out.println("you pressed one");
                 answer += "1";
+                play.drawLiveAnswer(1,answerCounter);
                 System.out.println(answer);
                 break;
             case 50:
                 System.out.println("you pressed two");
+                play.drawLiveAnswer(2,answerCounter);
                 answer +="2";
                 break;
             case 51:
                 System.out.println("you pressed three");
+                play.drawLiveAnswer(3,answerCounter);
                 answer +="3";
                 break;
             case 52:
                 System.out.println("you pressed four");
+                play.drawLiveAnswer(4,answerCounter);
                 answer +="4";
                 break;
             case 53:
                 System.out.println("you pressed five");
                 answer +="5";
+                play.drawLiveAnswer(5,answerCounter);
                 break;
             case 54:
                 System.out.println("you pressed six");
                 answer +="6";
+                play.drawLiveAnswer(6,answerCounter);
                 break;
             case 55:
                 System.out.println("you pressed seven");
                 answer +="7";
+                play.drawLiveAnswer(7,answerCounter);
                 break;
             case 56:
                 System.out.println("you pressed eight");
                 answer +="8";
+                play.drawLiveAnswer(8,answerCounter);
                 break;
             case 57:
                 System.out.println("you pressed nine");
                 answer +="9";
+                play.drawLiveAnswer(9,answerCounter);
                 break;
             default:
                 System.out.println("you pressed  o crl");
@@ -159,6 +175,8 @@ public class KeyboardListener implements KeyboardHandler {
     public String getAnswer(){
         return answer;
     }
+
+
 
     public void removeEventListeners(){
 
@@ -176,7 +194,8 @@ public class KeyboardListener implements KeyboardHandler {
 
     }
 
-    @Override
+
+
     public void keyReleased(KeyboardEvent keyboardEvent) {
     }
 
@@ -185,5 +204,12 @@ public class KeyboardListener implements KeyboardHandler {
         answer = "";
     }
 
+    public int[] getAnswerArray(){
+        return answerArray;
+    }
+
+    public void setAnswerCounter(){
+        answerCounter=0;
+    }
 }
 
