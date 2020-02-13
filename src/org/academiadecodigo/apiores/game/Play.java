@@ -85,8 +85,8 @@ public class Play {
             wrongOrRight.load("resources/yes.png");
             wrongOrRight.draw();
             currentPlayer.move();
-            yes = new Sound ("yes");
-            yes.play(true);
+            //yes = new Sound ("yes");
+            //yes.play(true);
             //yes.stop ();
 
 
@@ -97,8 +97,8 @@ public class Play {
 
             System.out.println("Wrong");
             wrongOrRight.load("resources/no.png");
-            no = new Sound ("no");
-            no.play(true);
+            //no = new Sound ("no");
+            //no.play(true);
             //no.stop();
 
         }

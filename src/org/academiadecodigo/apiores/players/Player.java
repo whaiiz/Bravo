@@ -17,7 +17,15 @@ public abstract  class Player {
    }
 
     public void move()  {
-        picture.translate(100,0);
+
+        int totalMoove=0;
+
+
+        while (totalMoove<100) {
+            picture.translate(0.5, 0);
+            totalMoove+=1;
+        }
+
         position += 100;
     }
 

@@ -45,31 +45,31 @@ public class Sound {
             case "yes":{
                 i = (int)(Math.random()*4);
                 switch (i){
-                    case 0: return " resources/yes1.wav";
-                    case 1: return " resources/yes2.wav";
-                    case 2: return " resources/yes3.wav";
-                    case 3: return " resources/yes4.wav";
+                    case 0: return " resources/music/yes1.wav";
+                    case 1: return " resources/music/yes2.wav";
+                    case 2: return " resources/music/yes3.wav";
+                    case 3: return " resources/music/yes4.wav";
                 }
             }
             case "no" :{
                 i = (int)(Math.random()*3);
                 switch (i){
-                    case 0: return " resources/no1.wav";
-                    case 1: return " resources/no2.wav";
-                    case 2: return " resources/no3.wav";
+                    case 0: return " resources/music/no1.wav";
+                    case 1: return " resources/music/no2.wav";
+                    case 2: return " resources/music/no3.wav";
                 }
             }
-            case "game": return " resources/game.wav";
+            case "game": return " resources/music/game.wav";
 
         }
-        return "resources/game.mp3";
+        return "resources/music/game.mp3";
     }
 
     public void play(boolean fromStart) {
 
-        //if (fromStart) {
-            //clip.setFramePosition(0);
-        //}
+        if (fromStart) {
+            clip.setFramePosition(0);
+        }
         clip.start();
     }
 
