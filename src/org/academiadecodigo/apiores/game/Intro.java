@@ -77,6 +77,8 @@ public class Intro implements KeyboardHandler {
     }
     public void hideElements(){
         background.delete();
+        jojo.delete();
+        soraia.delete();
     }
     public Player[] getPlayers(){
         return players;

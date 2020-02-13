@@ -76,30 +76,66 @@ public class Play {
 
     }
 
-    public void checkQuestion(){
+    public void checkQuestion() {
 
         answer = keyboardListener.getAnswer();
 
-        if(answer.equals(Alu.getCorrectAnswer())) {
+        if (answer.equals(Alu.getCorrectAnswer())) {
 
             wrongOrRight.load("resources/yes.png");
+
             wrongOrRight.draw();
+
             currentPlayer.move();
-            //yes = new Sound ("yes");
-            //yes.play(true);
-            //yes.stop ();
+
+           /* Thread
+
+           try {
+                Thread.sleep(1000);
+            } catch (InterruptedException exception) {
+                System.out.println("Yes sound problem!");
+
+            } */
+
+            //wrongOrRight.delete();
+
+
+
+
+            yes = new Sound("yes");
+            yes.play(true);
+           try {
+                Thread.sleep(2000);
+            } catch (InterruptedException exception) {
+                System.out.println("Yes sound problem!");
+
+            }
+            yes.stop();
+
 
 
             System.out.println("Right");
 
 
-        }else{
+        } else {
 
             System.out.println("Wrong");
             wrongOrRight.load("resources/no.png");
-            //no = new Sound ("no");
-            //no.play(true);
-            //no.stop();
+
+            /*
+            //sound
+            no = new Sound("no");
+            no.play(true);
+            /*
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException exception) {
+                System.out.println("No sound problem!");
+
+            }
+            no.stop();
+            */
+
 
         }
 
@@ -108,7 +144,6 @@ public class Play {
         deleteNumbers();
 
         logicGame();
-
     }
 
 
@@ -178,21 +213,21 @@ public class Play {
     public void drawLiveAnswer (int i){
         if (keyboardListener.getAnswerCounter() == 0){
             picture0 = selectPicture(i);
-            picture0.translate(300,0);
+            picture0.translate(320,0);
             picture0.draw();
             keyboardListener.setAnswerCounter(1);
             return;
         }
         if (keyboardListener.getAnswerCounter()==1){
             picture1 = selectPicture(i);
-            picture1.translate(375,0);
+            picture1.translate(400,0);
             picture1.draw();
             keyboardListener.setAnswerCounter(2);
             return;
         }
         if (keyboardListener.getAnswerCounter()==2){
             picture2 = selectPicture(i);
-            picture2.translate(500,0);
+            picture2.translate(480,0);
             picture2.draw();
             keyboardListener.setAnswerCounter(3);
             return;
