@@ -48,7 +48,7 @@ public abstract  class Player {
 
     public boolean checkFinishLine(){
 
-        if (position >= 850){ //850 CORRECTO
+        if (position >=  1100){ //850 CORRECTO
             return true;
         }
         return false;
