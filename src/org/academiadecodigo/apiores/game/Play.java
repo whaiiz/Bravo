@@ -23,12 +23,8 @@ public class Play {
     private Picture wrongOrRight = new Picture(1000,50, "resources/nothing.png");
 
     private String answer;
-
     private KeyboardListener keyboardListener;
-
-   // private KeyboardListener keyboardListener = new KeyboardListener(gamePicture);
-
-    private static Player winner;
+    private Player winner;
 
 
     public void init (){
@@ -60,18 +56,13 @@ public class Play {
 
         if (currentPlayer == p1) {
             currentPlayer = p2;
-            //p2.drawArrow();
-            //p1.deleteArrow();
             p2.drawHL();
             p1.deleteHL();
 
         }else{
            currentPlayer = p1;
-           //p1.drawArrow();
-           //p2.deleteArrow();
            p1.drawHL();
            p2.deleteHL();
-
         }
 
         int[] mFactors = Alu.generateMath();
@@ -87,24 +78,24 @@ public class Play {
         answer = keyboardListener.getAnswer();
 
         if(answer.equals(Alu.getCorrectAnswer())) {
-                wrongOrRight.load("resources/yes.png");
-                wrongOrRight.draw();
-                currentPlayer.move();
-                //precisamos de um delay!!
-                System.out.println("Right");
+
+            wrongOrRight.load("resources/yes.png");
+            wrongOrRight.draw();
+            currentPlayer.move();
+            System.out.println("Right");
+
         }else{
+
             System.out.println("Wrong");
             wrongOrRight.load("resources/no.png");
-        }
 
+        }
 
         keyboardListener.cleanAnswer();
 
         deleteNumbers();
 
-
         logicGame();
-        //System.out.println("teste do jaime 2");
 
     }
 
@@ -114,63 +105,36 @@ public class Play {
         switch (i) {
             case 0:
                 return new Picture(370, 50, "resources/0.png");
-            //firstNumber0.draw();
-            //break;
             case 1:
                 return new Picture(375, 50, "resources/1.png");
-            //firstNumber1.draw();
-            //break;
             case 2:
                 return new Picture(390, 50, "resources/2.png");
-            //firstNumber2.draw();
-            //break;
             case 3:
                 return new Picture(380, 50, "resources/3.png");
-            //firstNumber3.draw();
-            //break;
             case 4:
                 return new Picture(380, 50, "resources/4.png");
-            //firstNumber4.draw();
-            //break;
             case 5:
                 return new Picture(380, 50, "resources/5.png");
-            //firstNumber5.draw();
-            //break;
             case 6:
                 return new Picture(375, 50, "resources/6.png");
-            //firstNumber6.draw();
-            //break;
             case 7:
                 return new Picture(380, 50, "resources/7.png");
-            //firstNumber7.draw();
-            //break;
             case 8:
                 return new Picture(365, 50, "resources/8.png");
-            //firstNumber8.draw();
-            //break;
             case 9:
                 return new Picture(370, 50, "resources/9.png");
-            //firstNumber9.draw();
-            //break;
             case 10:
                 return new Picture(370, 50, "resources/10.png");
-            //firstNumber10.draw();
-            //break;
         }
         return null;
     }
 
     private void drawFirstPicture(int arrayNumber0) {
 
-        if(arrayNumber0 == 10) {
-
-            firstPicture = selectPicture(arrayNumber0);
+        firstPicture = selectPicture(arrayNumber0);
+        if(arrayNumber0 == 10) // when picture is then move a little to left
             firstPicture.translate(-40,0);
-            firstPicture.draw();
-        }else {
-            firstPicture = selectPicture(arrayNumber0);
-            firstPicture.draw();
-        }
+        firstPicture.draw();
 
     }
 
@@ -190,7 +154,7 @@ public class Play {
 
         equalSign.draw();
 
-        if (counts[1] == 10) {
+        if (counts[1] == 10) { // if its then move a little bit to the right
             equalSign.translate(20, 0);
         }
 
@@ -201,22 +165,22 @@ public class Play {
 
     public void drawLiveAnswer (int i){
         if (keyboardListener.getAnswerCounter() == 0){
-            picture0 =selectPicture(i);
-            picture0.translate(320,0);
+            picture0 = selectPicture(i);
+            picture0.translate(300,0);
             picture0.draw();
             keyboardListener.setAnswerCounter(1);
             return;
         }
         if (keyboardListener.getAnswerCounter()==1){
-            picture1 =selectPicture(i);
-            picture1.translate(420,0);
+            picture1 = selectPicture(i);
+            picture1.translate(375,0);
             picture1.draw();
             keyboardListener.setAnswerCounter(2);
             return;
         }
         if (keyboardListener.getAnswerCounter()==2){
-            picture2 =selectPicture(i);
-            picture2.translate(520,0);
+            picture2 = selectPicture(i);
+            picture2.translate(500,0);
             picture2.draw();
             keyboardListener.setAnswerCounter(3);
             return;

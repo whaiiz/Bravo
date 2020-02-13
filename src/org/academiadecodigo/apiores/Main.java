@@ -11,8 +11,7 @@ public class Main {
 
         Game g1 = new Game();
         g1.init();
-        //Jojo jojo  = new Jojo();
-        //jojo.showPicture();
+
     }
 
 

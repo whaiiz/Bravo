@@ -11,16 +11,15 @@ public class Alu {
 
     private static String correctAnswer;
 
-    private static String productText
-            ;
+    private static String productText;
 
     private static int memoryCounter=0;
 
 
     public static int[] generateMath(){
 
-        mFactor1 = (int) (Math.random()*9+1);
-        mFactor2 = (int) (Math.random()*9+1);
+        mFactor1 = (int) (Math.random()*10+1);
+        mFactor2 = (int) (Math.random()*10+1);
 
         correctAnswer = (mFactor1*mFactor2) + "";
 
