@@ -18,10 +18,13 @@ public class Finish implements KeyboardHandler {
     private Keyboard keyboard = new Keyboard(this);
     private KeyboardEvent letter_R = new KeyboardEvent();
 
+    private boolean isFinished = false;
+
 
     public Finish(Player winner){
         this.winner = winner;
         init();
+
 
     }
 
@@ -50,12 +53,22 @@ public class Finish implements KeyboardHandler {
 
     public void keyPressed(KeyboardEvent var1) {
 
-        backgroundImage.delete();
         System.out.println("You pressed R");
+        isFinished = true;
+        restart();
+        // System.exit(0);
 
+    }
 
-        System.exit(0);
+    public void restart(){
 
+        Game g1 = new Game();
+
+        try {
+            g1.init();
+        }catch(Exception e){
+            System.out.println("fodasse");
+        }
 
     }
 

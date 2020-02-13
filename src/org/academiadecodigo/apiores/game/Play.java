@@ -80,65 +80,27 @@ public class Play {
 
         answer = keyboardListener.getAnswer();
 
+
         if (answer.equals(Alu.getCorrectAnswer())) {
 
+            System.out.println("CORRECTO");
             wrongOrRight.load("resources/yes.png");
 
             wrongOrRight.draw();
 
             currentPlayer.move();
-
-           /* Thread
-
-           try {
-                Thread.sleep(1000);
-            } catch (InterruptedException exception) {
-                System.out.println("Yes sound problem!");
-
-            } */
-
-            //wrongOrRight.delete();
-
-
-
-
-            yes = new Sound("yes");
-            yes.play(true);
-           try {
-                Thread.sleep(2000);
-            } catch (InterruptedException exception) {
-                System.out.println("Yes sound problem!");
-
-            }
-            yes.stop();
-
-
-
-            System.out.println("Right");
+            playSound(true);
 
 
         } else {
 
             System.out.println("Wrong");
             wrongOrRight.load("resources/no.png");
-
-            /*
-            //sound
-            no = new Sound("no");
-            no.play(true);
-            /*
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException exception) {
-                System.out.println("No sound problem!");
-
-            }
-            no.stop();
-            */
-
+            playSound(false);
 
         }
 
+        System.out.println("ASDASDASDASDASDASDASDASD");
         keyboardListener.cleanAnswer();
 
         deleteNumbers();
@@ -206,6 +168,38 @@ public class Play {
         }
 
         equalSign.draw();
+
+    }
+
+    public void playSound(boolean yesOrNo){
+
+        if(!yesOrNo) {
+            Sound no = new Sound("no");
+            no.play(true);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException exception) {
+                System.out.println("No sound problem!");
+
+            }
+            no.stop();
+
+        }else{
+                Sound yes = new Sound("yes");
+                yes.play(true);
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException exception) {
+                    System.out.println("No sound problem!");
+
+                }
+                yes.stop();
+
+        }
+
+
+
+
 
     }
 

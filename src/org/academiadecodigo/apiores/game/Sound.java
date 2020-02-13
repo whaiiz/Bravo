@@ -5,27 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-/* invocar metodo de som na classe Game:
-    private Sound game;
-
-    game = new Sound("game");
-    game.play(true); //inicia
-    game.stop(); //para
-
- //invocar metodo no / yes
-
-    private Sound no;
-    private Sound yes;
-
-    yes = new Sound ("yes");
-    yes.play(true);
-    yes.stop ();
-
-    no = new Sound ("no");
-    no.play(true);
-    no.stop();
-*/
-
 public class Sound {
 
     private Clip clip;
@@ -39,7 +18,7 @@ public class Sound {
      * Plays the clip from the point it was stopped or from start if passed with the fromStart argument false or true
      * @param fromStart should be true if want to replay the sound from the start or false otherwise
      */
-    public String generatePath(String string){
+    private String generatePath(String string){
         int i;
         switch (string){
             case "yes":{
