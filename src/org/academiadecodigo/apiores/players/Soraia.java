@@ -13,6 +13,12 @@ public class Soraia extends Player {
 
     }
 
+    public void setPicture(){
+
+        p1 = new Picture(80,450,"resources/Soraia.png");
+
+    }
+
     public void drawHL(){
         p1.load("resources/soraiahl.png");
     }

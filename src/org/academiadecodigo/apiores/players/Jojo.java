@@ -9,8 +9,8 @@ public class Jojo extends Player {
     private static Picture winningImage = new Picture(10,10, "resources/soraia.png");
 
 
-    public Jojo() {
 
+    public Jojo() {
         super (p1);
 
     }
@@ -24,7 +24,11 @@ public class Jojo extends Player {
     }
 
 
+    public void setPicture(){
 
+        p1 = new Picture(90,280,"resources/Jojo.png");
+
+    }
 
    @Override
     public String toString (){

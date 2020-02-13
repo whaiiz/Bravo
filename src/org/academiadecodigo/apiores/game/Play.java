@@ -1,6 +1,8 @@
 package org.academiadecodigo.apiores.game;
 
+import org.academiadecodigo.apiores.players.Jojo;
 import org.academiadecodigo.apiores.players.Player;
+import org.academiadecodigo.apiores.players.Soraia;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Play {
@@ -32,12 +34,29 @@ public class Play {
 
     public void init (){
 
-        p1 = Game.getPlayers()[0];
-        p2 = Game.getPlayers()[1];
+        resetPlay();
+       // p1 = Game.getPlayers()[0];
+        //p2 = Game.getPlayers()[1];
         gamePicture.draw();
         p1.showPicture();
         p2.showPicture();
         logicGame();
+
+    }
+
+    public void resetPlay(){
+
+        p1 = new Jojo();
+        p2 = new Soraia();
+        p1.setPicture();
+        p2.setPicture();
+        gamePicture = new Picture(10,10,"resources/GameBackground.png");
+        picture0 = new Picture(450, 50, "resources/x.png");
+        picture1 = new Picture(450, 50, "resources/x.png");
+        picture2 = new Picture(450, 50, "resources/x.png");
+        xSign = new Picture(450, 50, "resources/x.png");
+        new Picture(600, 50, "resources/=.png");
+        new Picture(1000,50, "resources/nothing.png");
 
     }
 
@@ -96,11 +115,11 @@ public class Play {
 
             System.out.println("Wrong");
             wrongOrRight.load("resources/no.png");
+            wrongOrRight.draw();
             playSound(false);
 
         }
 
-        System.out.println("ASDASDASDASDASDASDASDASD");
         keyboardListener.cleanAnswer();
 
         deleteNumbers();
@@ -198,9 +217,6 @@ public class Play {
         }
 
 
-
-
-
     }
 
 
@@ -250,10 +266,7 @@ public class Play {
     public void finish(){
 
          gamePicture.delete();
-         firstPicture.delete();
-         secondPicture.delete();
-         xSign.delete();
-         equalSign.delete();
+         deleteNumbers();
          wrongOrRight.delete();
          p1.getPicture().delete();
          p2.getPicture().delete();

@@ -10,11 +10,13 @@ public abstract  class Player {
     private boolean currentPlayer = false;
 
 
+
     public Player (Picture picture) {
 
         this.picture = picture;
 
    }
+    public void setPicture(){}
 
     public void move()  {
 
