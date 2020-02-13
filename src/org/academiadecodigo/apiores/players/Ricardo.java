@@ -9,7 +9,7 @@ public class Ricardo extends Player {
 
     public Ricardo() {
 
-        super(p1,arrowPosition);
+        super(p1);
 
     }
 

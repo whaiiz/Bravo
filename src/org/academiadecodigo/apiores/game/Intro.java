@@ -9,76 +9,58 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 public class Intro implements KeyboardHandler {
-
     private Player players[] = new Player [2];
-
-    private Picture background = new Picture(10,10,"resources/BackgroundIntro.png");
-
+    private Picture background = new Picture(10,10,"resources/BackgroundIntro_.png");
+    Picture jojo = new Picture(680, 220, "resources/jojo menu.png");
+    Picture soraia = new Picture(960, 28, "resources/soraia menu.png");
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent space = new KeyboardEvent();
-
-    //private Play playGame = new Play();
-
     public boolean isFinished = false;
-
-
-
     public Intro (){
-
         players[0] = new Jojo();
-        players[1] = new Rita();
-
+        players[1] = new Soraia();
     }
-
-    public void init(){
-
+    public void init() throws InterruptedException{
         keyListener();
-
         while (isFinished == false){
-
+            for (int i = 0; i < 10; i++) {
+                Thread.sleep(50);
+                jojo.grow(1, 1);
+                soraia.grow(1, 1);
+                jojo.translate(0, -1);
+                soraia.translate(0, 1);
+            }
+            for (int i = 0; i < 10; i++) {
+                Thread.sleep(50);
+                jojo.grow(-1, -1);
+                soraia.grow(-1, -1);
+                jojo.translate(0, 1);
+                soraia.translate(0, -1);
+            }
             background.draw();
+            jojo.draw();
+            soraia.draw();
         }
-
-
     }
-
     public void keyListener(){
-
         space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         space.setKey(KeyboardEvent.KEY_SPACE);
         keyboard.addEventListener(space);
-
-
     }
-
     public void keyPressed(KeyboardEvent var1){
-
         // when key is pressed
         hideElements();
-
         isFinished = true;
-
     }
-
     public void keyReleased(KeyboardEvent var1){
-
     }
-
     public void hideElements(){
-
         background.delete();
-
     }
-
     public void finish(){
-
         isFinished = true;
-
     }
-
     public Player[] getPlayers(){
         return players;
     }
-
-
 }

@@ -1,5 +1,6 @@
 package org.academiadecodigo.apiores.game;
 
+import org.academiadecodigo.apiores.Main;
 import org.academiadecodigo.apiores.players.Jojo;
 import org.academiadecodigo.apiores.players.Player;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
@@ -47,15 +48,13 @@ public class Finish implements KeyboardHandler {
 
     }
 
-    public void keyPressed(KeyboardEvent var1){
+    public void keyPressed(KeyboardEvent var1) {
 
         backgroundImage.delete();
         System.out.println("You pressed R");
 
 
         System.exit(0);
-        // Game g1 = new Game();
-        //g1.init();
 
 
     }

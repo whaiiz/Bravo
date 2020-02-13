@@ -26,7 +26,7 @@ public class Game {
 
     }
 
-    public void init(){
+    public void init()throws InterruptedException{
 
         // init game
         intro.init();

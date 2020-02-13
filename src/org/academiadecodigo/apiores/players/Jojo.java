@@ -11,8 +11,7 @@ public class Jojo extends Player {
 
     public Jojo() {
 
-        super (p1,arrowPosition,winningImage);
-         //p1.grow( -200,-200);
+        super (p1);
 
     }
 

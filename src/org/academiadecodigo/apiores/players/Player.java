@@ -5,30 +5,19 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public abstract  class Player {
     private int position = 0;
     private Picture picture;
-    private Picture arrowPosition;
-    private Picture winingImage;
 
-    private boolean finishLine =false;
+    private boolean finishLine = false;
     private boolean currentPlayer = false;
 
 
-    public Player (Picture picture,Picture arrowPosition) {
+    public Player (Picture picture) {
 
         this.picture = picture;
-        this.arrowPosition = arrowPosition;
 
    }
-   public Player (Picture picture,Picture arrowPosition, Picture winningImage) {
-
-        this.picture = picture;
-        this.arrowPosition = arrowPosition;
-        this.winingImage = winningImage;
-
-    }
 
     public void move()  {
         picture.translate(100,0);
-        arrowPosition.translate(100,0);
         position += 100;
     }
 
@@ -43,35 +32,18 @@ public abstract  class Player {
         this.picture.delete();
     }
 
-    public void celebrate(){
-
-    }
-
-    public void drawArrow(){
-        arrowPosition.draw();
-    }
-
-    public void deleteArrow(){
-        arrowPosition.delete();
-    }
-    public void drawHL(){
-    }
-    public void deleteHL(){
-    }
+    public void drawHL(){}
+    public void deleteHL(){}
 
 
-        public boolean checkFinishLine(){
-        if (position >= 350){ //850 CORRECTO
+    public boolean checkFinishLine(){
+
+        if (position >= 850){ //850 CORRECTO
             return true;
         }
         return false;
+
     }
-
-    public Picture getWinningImage(){
-        return winingImage;
-    }
-
-
 
     public void setCurrentPlayer(){
 
