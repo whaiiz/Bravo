@@ -26,6 +26,9 @@ public class Play {
     private KeyboardListener keyboardListener;
     private Player winner;
 
+    private Sound no;
+    private Sound yes;
+
 
     public void init (){
 
@@ -82,12 +85,21 @@ public class Play {
             wrongOrRight.load("resources/yes.png");
             wrongOrRight.draw();
             currentPlayer.move();
+            yes = new Sound ("yes");
+            yes.play(true);
+            //yes.stop ();
+
+
             System.out.println("Right");
+
 
         }else{
 
             System.out.println("Wrong");
             wrongOrRight.load("resources/no.png");
+            no = new Sound ("no");
+            no.play(true);
+            //no.stop();
 
         }
 

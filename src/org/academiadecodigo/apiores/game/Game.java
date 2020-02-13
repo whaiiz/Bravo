@@ -10,6 +10,7 @@ public class Game {
     private Intro intro;
     private Play play;
     private static Player[] players;
+    private Sound game;
 
 
     public Game(){
@@ -23,6 +24,9 @@ public class Game {
 
         Rectangle canvas = new Rectangle(10,10,1280,720);
         canvas.draw();
+        game = new Sound("game");
+        game.play(true); //inicia
+        // game.stop(); //para
 
         intro.init();
         players = intro.getPlayers();
