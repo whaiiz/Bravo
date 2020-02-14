@@ -1,5 +1,5 @@
 <project name="CrawlMath" default="jarfile">
-​
+    ​
     <target name="init" description="Inits properties">
         <property name="project.name" value="CrawlMath"/>
         <property name="src.dir" value="src"/>
@@ -12,17 +12,17 @@
             <fileset dir="${lib.dir}" includes="**/*.jar"/>
         </path>
     </target>
-​
+    ​
     <target name="prepare" description="prepares the build process" depends="init">
         <mkdir dir="${classes.dir}"/>
     </target>
-​
+    ​
     <target name="compile" description="compiles the source code" depends="prepare">
         <javac srcdir="${src.dir}" destdir="${classes.dir}">
             <classpath refid="classpath"/>
         </javac>
     </target>
-​
+    ​
     <target name="jarfile" description="creates the jar file" depends="compile">
         <jar destfile="${build.dir}/${project.name}.jar" basedir="${classes.dir}">
             <manifest>
@@ -35,7 +35,7 @@
             </fileset>
         </jar>
     </target>
-​
+    ​
     <target name="clean" depends="init" description="cleans build directory">
         <delete dir="${build.dir}"/>
     </target>
