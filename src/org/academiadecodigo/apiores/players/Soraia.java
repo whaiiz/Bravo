@@ -32,25 +32,22 @@ public class Soraia extends Player {
     }
     public void move()  {
 
-        int totalMoove=0;
+        int totalMove=0;
 
-
-        while (totalMoove<100) {
+        while (totalMove<300) {
             p1.translate(0.5, 0);
-            totalMoove+=1;
+            totalMove+=1;
         }
 
-        position += 100;
+        position += 1;
     }
     public boolean checkFinishLine(){
 
-        if (position >=  500){ //850 CORRECTO
+        if (position >=  6){ //850 CORRECTO
             return true;
         }
         return false;
-
     }
-
     @Override
     public String toString (){
         return "Soraia";

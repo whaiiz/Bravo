@@ -31,16 +31,16 @@ public class Jojo extends Player {
 
     public void move()  {
 
-        int totalMoove=0;
-        while (totalMoove<100) {
+        int totalMove=0;
+        while (totalMove<300) { // 100
             p1.translate(0.5, 0);
-            totalMoove+=1;
+            totalMove+=1;
         }
-        position += 100;
+        position += 1; // 100
     }
     public boolean checkFinishLine(){
 
-        if (position >=  500){ //850 CORRECTO
+        if (position >=  6){ //850 CORRECTO
             return true;
         }
         return false;

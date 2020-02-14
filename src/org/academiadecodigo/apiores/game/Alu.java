@@ -18,8 +18,8 @@ public class Alu {
 
     public static int[] generateMath(){
 
-        mFactor1 = (int) (Math.random()*10+1);
-        mFactor2 = (int) (Math.random()*10+1);
+        mFactor1 = (int) (Math.random()*9+1);
+        mFactor2 = (int) (Math.random()*9+1);
 
         correctAnswer = (mFactor1*mFactor2) + "";
 
