@@ -9,8 +9,6 @@ public abstract  class Player {
     private boolean finishLine = false;
     private boolean currentPlayer = false;
 
-
-
     public Player (Picture picture) {
 
         this.picture = picture;
@@ -20,10 +18,9 @@ public abstract  class Player {
 
     public void move()  {
 
-        int totalMoove=0;
+      int totalMoove=0;
 
-
-        while (totalMoove<100) {
+      while (totalMoove<100) {
             picture.translate(0.5, 0);
             totalMoove+=1;
         }
@@ -45,7 +42,6 @@ public abstract  class Player {
     public void drawHL(){}
     public void deleteHL(){}
 
-
     public boolean checkFinishLine(){
 
         if (position >=  1100){ //850 CORRECTO
@@ -54,7 +50,6 @@ public abstract  class Player {
         return false;
 
     }
-
     public void setCurrentPlayer(){
 
        if (currentPlayer){

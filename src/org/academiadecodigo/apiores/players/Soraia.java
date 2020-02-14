@@ -30,6 +30,26 @@ public class Soraia extends Player {
     public void showPicture(){
         p1.draw();
     }
+    public void move()  {
+
+        int totalMoove=0;
+
+
+        while (totalMoove<100) {
+            p1.translate(0.5, 0);
+            totalMoove+=1;
+        }
+
+        position += 100;
+    }
+    public boolean checkFinishLine(){
+
+        if (position >=  500){ //850 CORRECTO
+            return true;
+        }
+        return false;
+
+    }
 
     @Override
     public String toString (){
